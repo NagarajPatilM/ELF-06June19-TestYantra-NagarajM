@@ -12,12 +12,10 @@ public class Student {
 		this.height = height;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "Student [age=" + age + ", name=" + name + ", height=" + height + "]";
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -26,7 +24,6 @@ public class Student {
 		result = prime * result + age;
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
