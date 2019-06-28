@@ -1,7 +1,12 @@
 package com.testyantra.javaapp.casting;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Lays extends Chips {
+
+	@Override
 	void open() {
-		System.out.println("opening lays");
+		log.info("i'm eating lays ");
 	}
 }
