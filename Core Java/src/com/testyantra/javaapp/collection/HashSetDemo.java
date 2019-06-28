@@ -2,6 +2,9 @@ package com.testyantra.javaapp.collection;
 
 import java.util.HashSet;
 
+import lombok.extern.java.Log;
+
+@Log
 public class HashSetDemo {
 
 	public static void main(String[] args) {
@@ -13,7 +16,7 @@ public class HashSetDemo {
 		h.add(2.2);
 
 		for (Object o : h) {
-			System.out.println(o);
+			log.info(" " + o);
 		}
 
 	}

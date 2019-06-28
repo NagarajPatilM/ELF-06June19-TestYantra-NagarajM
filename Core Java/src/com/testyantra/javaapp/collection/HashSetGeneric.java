@@ -2,6 +2,8 @@ package com.testyantra.javaapp.collection;
 
 import java.util.HashSet;
 
+import lombok.extern.java.Log;
+@Log
 public class HashSetGeneric {
 
 	public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class HashSetGeneric {
 		h.add("ruby");
 
 		for (Object o : h) {
-			System.out.println(o);
+			log.info(" "+o);
 		}
 
 	}

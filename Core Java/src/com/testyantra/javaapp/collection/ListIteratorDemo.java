@@ -5,6 +5,9 @@ import java.util.ListIterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import lombok.extern.java.Log;
+
+@Log
 public class ListIteratorDemo {
 
 	public static void main(String[] args) {
@@ -19,14 +22,13 @@ public class ListIteratorDemo {
 		i.log(Level.INFO, "FORWARD");
 		while (l.hasNext()) {
 			Object o = l.next();
-			System.out.println(o);
+			log.info(" " + o);
 		}
 
-		//System.out.println("=====backward");
-		i.log(Level.INFO,"backward");
+		i.log(Level.INFO, "backward");
 		while (l.hasPrevious()) {
 			Object o = l.previous();
-			System.out.println(o);
+			log.info(" " + o);
 		}
 
 	}

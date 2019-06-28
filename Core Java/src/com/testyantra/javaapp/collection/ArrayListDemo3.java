@@ -3,9 +3,12 @@ package com.testyantra.javaapp.collection;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import lombok.extern.java.Log;
+@Log
 public class ArrayListDemo3 {
 
 	public static void main(String[] args) {
+		
 		ArrayList<String> a = new ArrayList<>();
 		a.add("nag");
 		a.add("raj");
@@ -16,7 +19,7 @@ public class ArrayListDemo3 {
 
 		while (i.hasNext()) {
 			String str = i.next();
-			System.out.println(str);
+			log.info(" "+ str);
 		}
 
 	}

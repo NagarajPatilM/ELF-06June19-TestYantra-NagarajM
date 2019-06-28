@@ -2,6 +2,9 @@ package com.testyantra.javaapp.collection;
 
 import java.util.TreeSet;
 
+import lombok.extern.java.Log;
+
+@Log
 public class TreeSetDemo {
 
 	public static void main(String[] args) {
@@ -12,7 +15,7 @@ public class TreeSetDemo {
 		t.add("java");
 		t.add("scala");
 		for (Object o : t) {
-			System.out.println(o);
+			log.info(" " + o);
 		}
 
 	}

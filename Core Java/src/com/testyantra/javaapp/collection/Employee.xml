@@ -1,0 +1,31 @@
+<Employee>
+<welcome-message>
+&lt;html&gt;
+    &lt;body&gt;
+          &lt;b&gt;
+              &lt;i&gt;
+                  &lt;u&gt;india
+                  &lt;/u&gt;
+              &lt;/i&gt;
+          &lt;/b&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</welcome-message>
+
+
+<Employee-info
+>
+<emp-id>123</emp-id>
+<emp-name>nagaraj</emp-name>
+<emp-age>23</emp-age>
+<emp-designation>developer</emp-designation>
+<emp-email>nag@33</emp-email>
+</Employee-info>
+
+<Employee-address>
+<address-type>permanemt</address-type>
+<add1></add1>
+<add2></add2>
+</Employee-address>
+
+</Employee>

@@ -3,6 +3,9 @@ package com.testyantra.javaapp.collection;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import lombok.extern.java.Log;
+
+@Log
 public class GenericIterator {
 
 	public static void main(String[] args) {
@@ -16,7 +19,7 @@ public class GenericIterator {
 		Iterator<Integer> i = a.iterator();
 		while (i.hasNext()) {
 			Integer in = i.next();
-			System.out.println(in);
+			log.info(" " + in);
 		}
 
 	}

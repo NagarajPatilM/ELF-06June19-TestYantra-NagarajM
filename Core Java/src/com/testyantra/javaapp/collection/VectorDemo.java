@@ -5,6 +5,9 @@ import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.Vector;
 
+import lombok.extern.java.Log;
+
+@Log
 public class VectorDemo {
 
 	public static void main(String[] args) {
@@ -14,36 +17,36 @@ public class VectorDemo {
 		v.add(30);
 		v.add(40);
 
-		System.out.println("welcome to vector concept");
-		System.out.println("for loop");
+		log.info("welcome to vector concept");
+		log.info("for loop");
 		for (int i = 0; i < v.size(); i++) {
-			System.out.println(v.get(i));
+			log.info(" " + v.get(i));
 		}
 
-		System.out.println("for each loop");
+		log.info("for each loop");
 		for (Integer o : v) {
-			System.out.println(o);
+			log.info(" " + o);
 		}
 
-		System.out.println("iterator");
+		log.info("iterator");
 		Iterator<Integer> i = v.iterator();
 		while (i.hasNext()) {
 			Integer o = i.next();
-			System.out.println(o);
+			log.info(" " + o);
 		}
 
-		System.out.println("list iterator");
+		log.info("list iterator");
 		ListIterator<Integer> li = v.listIterator();
 		while (li.hasNext()) {
 			Integer o = li.next();
-			System.out.println(o);
+			log.info(" " + o);
 		}
 
-		System.out.println("enumeration");
+		log.info("enumeration");
 		Enumeration<Integer> e = v.elements();
 		while (e.hasMoreElements()) {
 			Integer k = e.nextElement();
-			System.out.println(k);
+			log.info(" " + k);
 		}
 
 	}

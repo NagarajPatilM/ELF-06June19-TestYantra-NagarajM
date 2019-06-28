@@ -2,6 +2,8 @@ package com.testyantra.javaapp.collection;
 
 import java.util.ArrayList;
 
+import lombok.extern.java.Log;
+@Log
 public class ArrayListDemo1 {
 
 	public static void main(String[] args) {
@@ -13,7 +15,7 @@ public class ArrayListDemo1 {
 
 		
 		for (Object o : a) {
-			System.out.println(o);
+			log.info(" "+o);
 		}
 	}
 

@@ -2,6 +2,8 @@ package com.testyantra.javaapp.collection;
 
 import java.util.ArrayList;
 
+import lombok.extern.java.Log;
+@Log
 public class ArrayListGenerics {
 
 	public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class ArrayListGenerics {
 			a.add(200.0);
 			a.add(2.2);
 			a.add(2.28);
-			System.out.println(a);
+			log.info(" "+a);
 		}
 	}
 
