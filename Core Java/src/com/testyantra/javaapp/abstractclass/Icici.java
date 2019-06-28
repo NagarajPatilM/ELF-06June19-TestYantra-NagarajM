@@ -1,16 +1,20 @@
 package com.testyantra.javaapp.abstractclass;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Icici implements AtmCard {
 
 	public void validate() {
-		System.out.println("validated using Icici");
+		log.info("validated using Icici");
 	}
 
 	public void getUserInfo() {
-		System.out.println("got using icici");
+		log.info("got using icici");
 	}
 
 	public void deposit() {
+		log.info("deposited using Icici");
 
 	}
 

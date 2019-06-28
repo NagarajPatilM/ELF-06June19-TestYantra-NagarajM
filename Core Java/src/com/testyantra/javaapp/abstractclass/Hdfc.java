@@ -1,16 +1,20 @@
 package com.testyantra.javaapp.abstractclass;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Hdfc implements AtmCard {
 
 	public void validate() {
-		System.out.println("validated using Hdfc");
+		log.info("validated using Hdfc");
 	}
 
 	public void getUserInfo() {
-		System.out.println("got using hdfc");
+		log.info("got using hdfc");
 	}
 
 	public void deposit() {
+		log.info("deposited using hdfc");
 
 	}
 

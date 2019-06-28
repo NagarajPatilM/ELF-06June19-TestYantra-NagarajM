@@ -1,9 +1,12 @@
 package com.testyantra.javaapp.abstractclass;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Hero extends Honda {
 
 	void design() {
-		System.out.println("Hi, I'm design method");
+		log.info("Hi, I'm design method");
 
 	}
 

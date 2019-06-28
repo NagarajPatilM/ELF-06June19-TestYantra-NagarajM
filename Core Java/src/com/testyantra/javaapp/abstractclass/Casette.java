@@ -1,8 +1,11 @@
 package com.testyantra.javaapp.abstractclass;
 
+import lombok.extern.java.Log;
+
+@Log
 public abstract class Casette {
 	void play() {
-		System.out.println("play method");
+		log.info("play method");
 	}
 
 	abstract void old();

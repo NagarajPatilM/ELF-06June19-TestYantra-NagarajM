@@ -1,8 +1,11 @@
 package com.testyantra.javaapp.abstractclass;
 
+import lombok.extern.java.Log;
+
+@Log
 public abstract class Google {
 	void login() {
-		System.out.println("login successful");
+		log.info("login successful");
 	}
 
 	abstract void sendDoc();

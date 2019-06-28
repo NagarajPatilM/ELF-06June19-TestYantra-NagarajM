@@ -6,7 +6,6 @@ public class TestCasette {
 		Casette c = new Pendrive();
 		c.old();
 		c.play();
-
 	}
 
 }

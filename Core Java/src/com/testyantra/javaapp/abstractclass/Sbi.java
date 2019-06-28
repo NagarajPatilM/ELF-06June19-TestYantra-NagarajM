@@ -1,16 +1,20 @@
 package com.testyantra.javaapp.abstractclass;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Sbi implements AtmCard {
 
 	public void validate() {
-		System.out.println("validated using sbi atm card");
+		log.info("validated using sbi atm card");
 	}
 
 	public void getUserInfo() {
-		System.out.println("got information using sbi atm card");
+		log.info("got information using sbi atm card");
 	}
 
 	public void deposit() {
+		log.info("money is deposited using sbi card");
 
 	}
 

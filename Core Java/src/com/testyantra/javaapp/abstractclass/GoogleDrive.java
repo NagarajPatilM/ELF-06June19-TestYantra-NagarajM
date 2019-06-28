@@ -1,7 +1,10 @@
 package com.testyantra.javaapp.abstractclass;
 
+import lombok.extern.java.Log;
+
+@Log
 public class GoogleDrive extends Google {
 	void sendDoc() {
-		System.out.println("send upto 15GB of data");
+		log.info("send upto 15GB of data");
 	}
 }

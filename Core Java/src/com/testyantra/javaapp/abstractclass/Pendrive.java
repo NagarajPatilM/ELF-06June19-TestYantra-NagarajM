@@ -1,9 +1,12 @@
 package com.testyantra.javaapp.abstractclass;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Pendrive extends CD {
 
 	void old() {
-		System.out.println("pendrive");
+		log.info("pendrive");
 
 	}
 

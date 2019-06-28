@@ -1,7 +1,10 @@
 package com.testyantra.javaapp.abstractclass;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Gmail extends Google {
 	void sendDoc() {
-		System.out.println("send upto 25MB of data");
+		log.info("send upto 25MB of data");
 	}
 }
