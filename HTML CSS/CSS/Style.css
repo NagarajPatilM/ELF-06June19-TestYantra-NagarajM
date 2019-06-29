@@ -1,0 +1,33 @@
+.abc{
+    color:purple;
+    background: black;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#xyz{
+    background: yellowgreen;
+}
+
+body{
+    background: yellowgreen;
+}
+input[type="text"],input[type="password"]{
+    height: 40px;
+    display: block;
+}
+#box1{
+     background: aquamarine; 
+     padding: 100px; 
+     border: 10px solid red; 
+     
+    margin: 50px ; 
+}
+#box2{
+    background: orange; 
+    padding:60px; 
+    border: 10px solid red; 
+    margin: 50px ;
+}
+#main{
+    background: yellow;
+}
