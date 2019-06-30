@@ -1,6 +1,7 @@
 package com.testyantra.javaapp.string;
 
 public final class ImmutableEmployee {
+	
 	private final String name;
 	private final int age;
 	private final double height;

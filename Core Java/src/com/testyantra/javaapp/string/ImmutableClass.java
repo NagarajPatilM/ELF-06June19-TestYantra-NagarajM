@@ -1,6 +1,7 @@
 package com.testyantra.javaapp.string;
 
 final public class ImmutableClass {
+	
 	private final String name;
 	private final String nickname;
 
