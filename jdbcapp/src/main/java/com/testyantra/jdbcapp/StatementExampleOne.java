@@ -40,18 +40,17 @@ public final class StatementExampleOne {
 
 			String dburl = "jdbc:mysql://localhost:3306/testyantra_db";
 			con = DriverManager.getConnection(dburl, "root", "root");
-			log.info(" " + con.getClass());
 
 			// 3.Issue SQL query via connection
-			String query = "select * from emp_info " + "where id=1";
+			String query = "select * from emp_info " + "where id=2";
 			log.info(" " + query);
 			stmt = con.createStatement();
 
 			// 4.Process the results returned by SQL query
 			rs = stmt.executeQuery(query);
-			while (rs.next()) {
-				log.info("id is            ========>" + rs.getInt("id"));
-				log.info("name is          ========>" + rs.getString("name"));
+			if (rs.next()) {
+				log.info("id is            ========>" + rs.getInt(1));
+				log.info("name is          ========>" + rs.getString(2));
 				log.info("Gender is        ========> " + rs.getString("gender"));
 				log.info(" salary is       ========> " + rs.getString("salary"));
 				log.info("phone no is      ========>" + rs.getInt("phone"));

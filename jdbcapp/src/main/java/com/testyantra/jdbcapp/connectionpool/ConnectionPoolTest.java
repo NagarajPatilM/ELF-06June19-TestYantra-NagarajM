@@ -1,4 +1,4 @@
-package com.testyantra.jdbcapp;
+package com.testyantra.jdbcapp.connectionpool;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,36 +12,17 @@ import java.sql.Driver;
 import lombok.extern.java.Log;
 
 @Log
-public final class MyFirstJDBCProgram {
+public final class ConnectionPoolTest {
 
 	public static void main(String[] args) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
+		ConnectionPool pool = null;
 
 		try {
-			// 1. Load the driver
-			/*
-			 * java.sql.Driver driver = new com.mysql.jdbc.Driver();
-			 * 
-			 * DriverManager.deregisterDriver(driver);
-
-			 */
-
-			try {
-				Class.forName("com.mysql.jdbc.Driver").newInstance();
-			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-				e.printStackTrace();
-
-			}
-			// 2. Get the DB connection via. driver
-			// String dburl =
-			// "jdbc:mysql://10.10.13.105:3306/techchefs_db?user=root&password=root";
-			// con = DriverManager.getConnection(dburl);
-
-			String dburl = "jdbc:mysql://localhost:3306/testyantra_db";
-			con = DriverManager.getConnection(dburl, "root", "root");
-			log.info(" " + con.getClass());
+			pool = ConnectionPool.getConnectionPool();
+			con = pool.getConnectionFromPool();
 
 			// 3.Issue SQL query via connection
 			String query = "select * from emp_info";
@@ -65,11 +46,15 @@ public final class MyFirstJDBCProgram {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 		// 5. close all the JDBC objects
-	/*	finally {
+		finally {
 			try {
+
+				pool.returnConnectionToPool(con);
 				if (con != null) {
 					con.close();
 				}
@@ -81,8 +66,8 @@ public final class MyFirstJDBCProgram {
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}*/
-		
+			}
+
 		}
 	}
-
+}
