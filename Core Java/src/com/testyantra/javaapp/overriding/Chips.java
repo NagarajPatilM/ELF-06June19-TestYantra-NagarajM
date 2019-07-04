@@ -1,12 +1,15 @@
 package com.testyantra.javaapp.overriding;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Chips {
-void open()
-{
-	System.out.println("opening chips");
-}
-void eat()
-{
-	System.out.println("eating chips");
-}
+
+	void open() {
+		log.info("opening chips");
+	}
+
+	void eat() {
+		log.info("eating chips");
+	}
 }

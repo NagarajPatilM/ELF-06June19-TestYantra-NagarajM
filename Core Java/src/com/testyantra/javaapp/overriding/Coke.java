@@ -1,13 +1,16 @@
 package com.testyantra.javaapp.overriding;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Coke {
-void open()
-{
-	System.out.println("opening the bottle");
-}
-void drink()
-{
-	System.out.println("drinking coke");
-	
-}
+
+	void open() {
+		log.info("opening the bottle");
+	}
+
+	void drink() {
+		log.info("drinking coke");
+
+	}
 }

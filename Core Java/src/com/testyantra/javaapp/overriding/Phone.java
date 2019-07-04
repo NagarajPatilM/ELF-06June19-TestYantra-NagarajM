@@ -1,8 +1,10 @@
 package com.testyantra.javaapp.overriding;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Phone {
-void call()
-{
-	System.out.println("call");
-}
+	void call() {
+		log.info("call");
+	}
 }

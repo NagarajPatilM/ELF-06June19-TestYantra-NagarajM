@@ -1,8 +1,11 @@
 package com.testyantra.javaapp.overriding;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Car {
 void speed()
 {
-	System.out.println("car is running at 50-100kmph");
+	log.info("car is running at 50-100kmph");
 }
 }

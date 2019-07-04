@@ -1,11 +1,14 @@
 package com.testyantra.javaapp.overriding;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Penn {
-	void open()
-	{
-		System.out.println("open the pen");
+	void open() {
+		log.info("open the pen");
 	}
+
 	void write() {
-		System.out.println("write using the pen");
+		log.info("write using the pen");
 	}
 }

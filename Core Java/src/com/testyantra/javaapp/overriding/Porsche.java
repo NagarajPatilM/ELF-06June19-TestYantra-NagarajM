@@ -1,9 +1,12 @@
 package com.testyantra.javaapp.overriding;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Porsche extends LuxuryVehicle{
 	void drive()
 	{
-		System.out.println("Hi I'm driving Porsche");
+		log.info("Hi I'm driving Porsche");
 	}
 
 }

@@ -1,8 +1,11 @@
 package com.testyantra.javaapp.overriding;
 
-public class Audi extends LuxuryVehicle{
-void drive()
-{
-	System.out.println("hi, i'm driving audi");
-}
+import lombok.extern.java.Log;
+
+@Log
+public class Audi extends LuxuryVehicle {
+
+	void drive() {
+		log.info("hi, i'm driving audi");
+	}
 }

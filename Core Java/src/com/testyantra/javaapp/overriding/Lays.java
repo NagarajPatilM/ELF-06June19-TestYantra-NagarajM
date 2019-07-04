@@ -1,13 +1,16 @@
 package com.testyantra.javaapp.overriding;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Lays extends Chips {
-	void open()
-	{
-		System.out.println("opening lays");
+	
+	void open() {
+		log.info("opening lays");
 	}
-	void eat()
-	{
-		System.out.println("eating lays");
+
+	void eat() {
+		log.info("eating lays");
 	}
 
 }

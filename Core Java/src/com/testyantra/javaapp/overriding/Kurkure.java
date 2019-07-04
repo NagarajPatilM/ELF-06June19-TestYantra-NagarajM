@@ -1,14 +1,17 @@
 package com.testyantra.javaapp.overriding;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Kurkure extends Chips {
-	void open()
-	{
-		System.out.println("opening kurkure");
-			
+	
+	void open() {
+		log.info("opening kurkure");
+
 	}
-	void eat()
-	{
-		System.out.println("eating kurkure");
+
+	void eat() {
+		log.info("eating kurkure");
 	}
 
 }

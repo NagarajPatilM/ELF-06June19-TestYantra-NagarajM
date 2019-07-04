@@ -1,8 +1,11 @@
 package com.testyantra.javaapp.overriding;
 
+import lombok.extern.java.Log;
+
+@Log
 public class LuxuryVehicle {
-  void drive()
-  {
-	  System.out.println("drive the vehicle");
-  }
+
+	void drive() {
+		log.info("drive the vehicle");
+	}
 }
