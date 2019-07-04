@@ -1,0 +1,39 @@
+1..WAQ to display employees working in dept no. 20.
+SQL>>select ename from employee
+     where deptno=20;
+
+2..WAQ to display employees earning more than rs. 2500.
+SQL>>select ename from employee
+     where sal>2500;
+
+3..WAQ to display all the employees whose job type is software engineer.
+SQL>>select ename from employee
+     where job='software engineer';
+
+4..WAQ to display employees working in dept 10,20, and 40.
+SQL>>select ename from employee
+     where deptno in(10,20,40);
+
+5..WAQ to display all the employees whose name starts with 's'.
+SQL>>select ename from employee
+      where ename like 's%';
+
+6..WAQ to display the employees whose firstname is having letter 'L' as 2nd character.
+SQL>>select ename from employee
+     where fName like '_L%';
+
+7..WAQ to display employees whose firstname is having atleast 2 'A' character.
+SQL>>select ename from employee
+     where fName like '%A%A%';
+
+8..WAQ to display the employees whose lastname is having letter 'E' as second last character.
+SQL>>select ename from employee
+     where ename like '%E_';
+
+9..WAQ to display all the employees who are having exactly 5 characters in their last name.
+SQL>>select ename from employee
+     where lName like '_____';
+
+10..WAQ to display all the employees whose is between 20000 and 30000.
+SQL>>select ename from employee
+      where sal between 20000 and 30000

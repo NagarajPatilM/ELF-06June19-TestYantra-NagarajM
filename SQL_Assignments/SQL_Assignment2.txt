@@ -1,0 +1,58 @@
+1..WAQ to display all the details of the software developer in dept no 30.
+SQL>>select * from employee
+     where job ='software developer';
+
+
+2..WAQ to display the list for all the software developer in dept no. 40 and having salary greater than 5000.
+SQL>>select ename from employee
+     where job='software developer'
+     and deptno=40
+     and sal>5000;
+
+
+3..WAQ to display all the employees except those who are working in dept no. 10 and 20.
+SQL>>select ename from employee
+     where deptno not in(10,20);
+
+
+
+4..WAQ to display list all the employees who are not working as a software developer and clerks in dept 10 and 20 with a salary in the range of 1000 to 3000.
+SQL>>select ename from employee
+     where job not in('software developer','clerk')
+     and deptno not in(10,20)
+     and salary between 1000 and 3000;
+
+
+
+5.. WAQ to display the list of the employees whose salary is not in the range of 10000 to 20000 in dept 10,20,30 except all salesman.
+SQL>>select ename from employee
+     where (sal not between 10000 and 20000
+     and deptno not in(10,20,30)) and 
+     job!='salesman';
+
+
+6..WAQ to arrange all the employees by their salary in descending order.
+SQL>>select sal from employee
+    order by sal(desc);
+
+
+7..WAQ to display maximum ,minimum and total salary of an employee.
+SQL>>select max(sal),min(sal),sum(sal)
+     from employee
+
+
+8..WAQ to display list of number of software developers in dept 20.
+SQL>>select count(*) from employee
+    where deptno=20;
+
+
+9..WAQ to display the list of highest and lowest salary earned by salesman.
+SQL>>select max(sal),min(sal)
+     from employee
+     where job='salesman';
+
+
+10.. WAQ to display total salary of all the departments.
+SQL>>select sum(sal) from employee;
+
+
