@@ -1,0 +1,172 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.17763}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs36\lang9                            \ul Java Coding Conventions\par
+
+\pard\sa200\sl276\slmult1\qj\ulnone\fs28  1.1 Why Have Code Conventions\par
+\b0\fs24 Code conventions are important to programmers for a number of reasons:\par
+\f1\bullet  80% of the lifetime cost of a piece of software goes to maintenance.\par
+\bullet  Hardly any software is maintained for its whole life by the original author.\par
+\bullet  Code conventions improve the readability of the software, allowing engineers to\par
+\f0\lang1033    \f1\lang9 understand new code more quickly and thoroughly.\par
+\bullet  If you ship your source code as a product, you need to make sure it is as well \f0\lang1033             \par
+   \f1\lang9 packaged\f0\lang1033  \f1\lang9 and clean as any other product you create.\par
+
+\pard\sa200\sl276\slmult1\par
+\b\f0\fs28\lang1033 1.2 \f1\lang9 File Suffixes\par
+\b0\fs24 JavaSoft uses the following file suffixes:\par
+\ul\b File Type\ulnone  \f0\lang1033                 \ul\f1\lang9 Suffix\ulnone\b0\par
+Java source \f0\lang1033            \f1\lang9 .java\par
+Java bytecode \f0\lang1033       \f1\lang9 .class\par
+\par
+\b\f0\fs28\lang1033 2\fs32 : \ul\fs28 Declarations\ulnone\b0\fs24\par
+ \b 2.1 Number Per Line\b0\par
+\f1\lang9 One declaration per line is recommended since it encourages commenting. In other words,\par
+\f0\lang1033              \i\f1\lang9 int level; \f0\lang1033  \i0\f1\lang9 // indentation level\par
+\f0\lang1033              \i\f1\lang9 int size; \f0\lang1033  \i0\f1\lang9 // size of table\par
+is preferred over\i\par
+\f0\lang1033               \f1\lang9 int level, size;\par
+\i0 In absolutely no case should variables and functions be declared on the same line. Example:\i\par
+\f0\lang1033             \f1\lang9 long dbaddr, getDbaddr(); // WRONG!\par
+\i0 Do not put different types on the same line. Example:\i\par
+\f0\lang1033            \f1\lang9 int foo, fooarray[]; //WRONG!\par
+\i0\par
+\b\f0\fs32 3 : \ul Comments\par
+\ulnone\fs28 3.1  Block Comments\b0\fs24\par
+Block comments are used to provide descriptions of files, methods, data structures and algorithms. Block comments should be used at the beginning of each file and before each method. They can also be used in other places, such as within methods. Block comments inside a function or method should be indented to the same level as the code they describe.\par
+A block comment should be preceded by a blank line to set it apart from the rest of the code. Block comments have an asterisk \ldblquote *\rdblquote  at the beginning of each line except the first.\par
+                    \i\fs22 /*\par
+                       * Here is a block comment.\par
+\tab          */\par
+\i0\fs24 Block comments can start with /*-, which is recognized by \b indent\b0 (1) as the beginning of a block comment that should not reformatted. Example:\fs22\par
+\i                         /*\par
+                        * Here is a block comment with some very special\par
+                        * formatting that I want indent(1) to ignore.\par
+                        *\par
+                        * one\par
+                        *  \tab      two\par
+                        *              three\par
+                        */\par
+\b\i0\fs24 Note\b0 : If you don\rquote t use \b indent\b0 (1), you don\rquote t have to use /*- in your code or make any\par
+ other concessions to the possibility that someone else might run \b indent\b0 (1) on your code.\par
+\par
+\b\fs28 3.2  Single-Line Comments\b0\fs24\par
+Short comments can appear on a single line indented to the level of the code that follows.\i\par
+            \fs22 if (condition) \{\par
+                     /* Handle the condition. */\par
+                     ...\par
+              \}\par
+\b\i0\fs28 3.3  Trailing Comments\par
+\b0\fs24 Very short comments can appear on the same line as the code they describe, but should be shifted far enough to separate them from the statements. If more than one short comment appears in a chunk of code, they should all be indented to the same tab setting. Avoid the assembly language style of commenting every line of executable code with a trailing comment.\par
+Here\rquote s an example of a trailing comment in Java code\i\fs22\par
+                           if (a == 2) \{\par
+                           return TRUE;                              /* special case */\par
+                           \} else \{\par
+                           return isprime(a);                     /* works only for odd a */\par
+\par
+\b\i0\fs28 3.4  End-Of-Line Comments\par
+\b0\fs24 The // comment delimiter begins a comment that continues to the newline. It can comment out a complete line or only a partial line. It shouldn\rquote t be used on consecutive multiple lines for text comments; however, it can be used in consecutive multiple lines for commenting out sections of code.\par
+ Examples of all three styles follow:\i\fs22\par
+                                     if (foo > 1) \{\par
+                                             // Do a double-flip.\par
+                                            ...\par
+                                      \}\par
+                                     else\par
+                                              return false;     // Explain why here.\par
+                                     //if (bar > 1) \{\par
+                                     //\par
+                                     //                          // Do a triple-flip.\par
+                                     //                         ...\par
+                                    // \} \par
+                                    //else\par
+                                    //      return false;\par
+\par
+\b\i0\fs28 3.5  Documentation Comments\par
+\b0\fs24 Doc comments describe Java classes, interfaces, constructors, methods, and fields. Each doc comment is set inside the comment delimiters /**...*/, with one comment per API. This comment should appear just before the declaration:\i\fs22\par
+                           /**\par
+                           * The Example class provides ...\par
+                           */\par
+                           class Example \{ ...\fs18\par
+\b\i0\fs28 4: Statements\b0\fs24\par
+\b  4.1 Simple Statements\b0\par
+Each line should contain at most one statement. Example:\par
+                   \i argv++; argc--; \i0 // AVOID!\par
+Do not use the comma operator to group multiple statements unless it is for an obvious reason.\par
+Example:\i\par
+               if (err) \{\par
+                Format.print(System.out, \ldblquote error\rdblquote ), exit(1); //VERY WRONG!\par
+                \}\par
+\i0  \b 4.2 Compound Statements\b0\par
+Compound statements are statements that contain lists of statements enclosed in braces \ldblquote\{ statements \}\rdblquote . See the following sections for examples.\par
+\f1\bullet  The enclosed statements should be indented one more level than the compound statement.\par
+\bullet  The opening brace should be at the end of the line that begins the compound statement; the\f0\lang1033  \f1\lang9 closing brace should begin a line and be indented to the beginning of the compound\f0\lang1033  \f1\lang9 statement.\par
+\bullet  Braces are used around all statements, even singletons, when they are part of a control\f0\lang1033  \f1\lang9 structure, such as a if-else or for statement. This makes it easier to add statements\f0\lang1033  \f1\lang9 without accidentally introducing bugs due to forgetting to add braces.\par
+ \b\f0\lang1033 4\f1\lang9 .3 return Statements\b0\par
+A return statement with a value should not use parentheses unless they make the return value\f0\lang1033  \f1\lang9 more obvious in some way. Example:\par
+\f0\lang1033                  \i\f1\lang9 return;\par
+\f0\lang1033                  \f1\lang9 return myDisk.size();\par
+\f0\lang1033                  \f1\lang9 return (size ? size : defaultSize);\par
+\i0  \b\f0\lang1033 4\f1\lang9 .4 if, if-else, if-else-if-else Statements\b0\par
+The if-else class of statements should have the following form:\par
+\i\f0\lang1033                      \f1\lang9 if (condition) \{\par
+\f0\lang1033                      \f1\lang9 statements;\par
+\f0\lang1033                      \f1\lang9\}\par
+\f0\lang1033                      \f1\lang9 if (condition) \{\par
+\f0\lang1033                      \f1\lang9 statements;\par
+\f0\lang1033                      \f1\lang9\} else \{\par
+\f0\lang1033                      \f1\lang9 statements;\par
+\f0\lang1033                      \f1\lang9\}\f0\lang1033  \f1\lang9\par
+\f0\lang1033                      \f1\lang9 if (condition) \{\par
+\f0\lang1033                     \f1\lang9 statements;\par
+\f0\lang1033                     \f1\lang9\} else if (condition) \{\par
+\f0\lang1033                     \f1\lang9 statements;\par
+\f0\lang1033                     \f1\lang9\} else if (condition) \{\par
+\f0\lang1033                     \f1\lang9 statements;\par
+\f0\lang1033                      \f1\lang9\}\par
+\i0 Note: if statements always use braces \{\}. Avoid the following error-prone form:\par
+\f0\lang1033                          \i\f1\lang9 if (condition) \f0\lang1033  \f1\lang9 //AVOID! THIS OMITS THE BRACES \{\}!\par
+\f0\lang1033                            \f1\lang9 statement;\par
+\i0  \b\f0\lang1033 4\f1\lang9 .5 for Statements\b0\par
+A for statement should have the following form:\i\par
+\f0\lang1033             \f1\lang9 for (initialization; condition; update) \{\par
+\f0\lang1033            \f1\lang9 statements;\par
+\f0\lang1033             \f1\lang9\}\par
+\i0 An empty for statement (one in which all the work is done in the initialization, condition, and\f0\lang1033  \f1\lang9 update clauses) should have the following form:\par
+\f0\lang1033           \i\f1\lang9 for (initialization; condition; update);\par
+\i0 When using the comma operator in the initialization or update clause of a for statement, avoid\f0\lang1033  \f1\lang9 the complexity of using more than three variables. If needed, use separate statements before\f0\lang1033  \f1\lang9 the for loop (for the initialization clause) or at the end of the loop (for the update clause).\par
+ \b\f0\lang1033 4\f1\lang9 .6 while Statements\b0\par
+A while statement should have the following form:\i\par
+\f0\lang1033              \f1\lang9 while (condition) \{\par
+\f0\lang1033               \f1\lang9 statements;\par
+\f0\lang1033                 \f1\lang9\}\par
+\i0 An empty while statement should have the following form:\par
+\f0\lang1033             \i\f1\lang9 while (condition);\i0\par
+\b  \f0\lang1033 4\f1\lang9 .7 do-while Statements\par
+\b0 A do-while statement should have the following form:\par
+\i\f0\lang1033              \f1\lang9 do \{\par
+\f0\lang1033              \f1\lang9 statements;\par
+\f0\lang1033            \f1\lang9\} while (condition);\b\par
+\i0  \f0\lang1033 4\f1\lang9 .8 switch Statements\par
+\b0 A switch statement should have the following form:\i\par
+\f0\lang1033            \f1\lang9 switch (condition) \{\par
+\f0\lang1033            \f1\lang9 case ABC:\par
+\f0\lang1033            \f1\lang9 statements;\par
+\f0\lang1033           \f1\lang9  /* falls through */\par
+\f0\lang1033            \f1\lang9 case DEF:\par
+\f0\lang1033            \f1\lang9 statements;\par
+ \f0\lang1033            \f1\lang9 break;\par
+\f0\lang1033             \f1\lang9 case XYZ:\par
+\f0\lang1033             \f1\lang9 statements;\par
+\f0\lang1033            \f1\lang9  break;\par
+\f0\lang1033             \f1\lang9 default:\par
+\f0\lang1033             \f1\lang9 statements;\par
+\f0\lang1033             \f1\lang9  break;\par
+\f0\lang1033              \f1\lang9\}\par
+\b\i0  \f0\lang1033 4.9\f1\lang9  try-catch Statements\b0\par
+A try-catch statement should have the following format:\i\par
+\f0\lang1033             \f1\lang9 try \{\par
+\f0\lang1033             \f1\lang9 statements;\par
+\f0\lang1033              \f1\lang9\} catch (ExceptionClass e) \{\par
+\f0\lang1033            \f1\lang9 statements;\par
+\f0\lang1033              \f1\lang9\}\f0\par
+}
+ 
