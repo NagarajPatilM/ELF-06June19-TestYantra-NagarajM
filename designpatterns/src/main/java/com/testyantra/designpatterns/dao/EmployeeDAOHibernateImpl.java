@@ -18,19 +18,52 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 
 	@Override
 	public EmployeeInfoBean getEmployeeInfo(String id) {
-		return null;
+		return getEmployeeInfo(Integer.parseInt(id));
 	}
 
 	@Override
 	public EmployeeInfoBean getEmployeeInfo(int id) {
+		
+		//1. Load config file
 		Configuration cfg = new Configuration();
 		cfg.configure("hibernate.cfg.xml");
-
+		
+       //2. Build session factory
 		SessionFactory factory = cfg.buildSessionFactory();
+		
+		//3. open session
 		Session session = factory.openSession();
+		
+		//4. Interact with DB via session
 		EmployeeInfoBean bean = session.get(EmployeeInfoBean.class, id);
+		
+		//5.close the session
 		session.close();
 		return bean;
+	}
+
+	@Override
+	public boolean createEmployeeInfo(EmployeeInfoBean bean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateEmployeeInfo(EmployeeInfoBean bean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmployeeInfo(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmployeeInfo(String id) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

@@ -1,12 +1,8 @@
 package com.testyantra.designpatterns;
 
-import java.util.ArrayList;
-
 import com.testyantra.designpatterns.beans.EmployeeInfoBean;
 import com.testyantra.designpatterns.dao.EmployeeDAO;
 import com.testyantra.designpatterns.dao.EmployeeDAOFactory;
-import com.testyantra.designpatterns.dao.EmployeeDAOHibernateImpl;
-import com.testyantra.designpatterns.dao.EmployeeDAOJDBCImpl;
 
 import lombok.extern.java.Log;
 
@@ -22,6 +18,23 @@ public class DesignPatternsTest {
 		 * ArrayList<EmployeeInfoBean> beans = dao.getAllEmployeeInfoBeans(); for
 		 * (EmployeeInfoBean bean : beans) { printInfo(bean); }
 		 */
+
+		// create an employee info
+
+		EmployeeInfoBean empInfo = new EmployeeInfoBean();
+		empInfo.setId(19);
+		empInfo.setAccountNo(13256276);
+		empInfo.setAge(23);
+		empInfo.setDepartmentId(50);
+		empInfo.setDesignation("developer");
+		empInfo.setEmail("chahal@34");
+		empInfo.setGender("male");
+		empInfo.setManagerId(3);
+		empInfo.setName("chahal");
+		empInfo.setPhoneNo(936782382);
+		empInfo.setSalary(60000);
+		// log.info(" " + dao.createEmployeeInfo(empInfo));
+		log.info(" " + dao.deleteEmployeeInfo(2));
 	}// End of main
 
 	private static void printInfo(EmployeeInfoBean bean) {
@@ -38,7 +51,7 @@ public class DesignPatternsTest {
 			log.info(" Dob :" + bean.getDob());
 			log.info(" " + bean.getHiredate());
 			log.info(" " + bean.getDesignation());
-		}
 
+		}
 	}
 }

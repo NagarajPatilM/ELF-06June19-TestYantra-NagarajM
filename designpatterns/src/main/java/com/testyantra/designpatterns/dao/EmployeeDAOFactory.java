@@ -1,6 +1,7 @@
 package com.testyantra.designpatterns.dao;
 
 public class EmployeeDAOFactory {
+	
 	private static String dbInteractionType = "hibernate";
 	
 	private EmployeeDAOFactory() {
@@ -13,7 +14,7 @@ public class EmployeeDAOFactory {
 		if(dbInteractionType.equals("jdbc")) {
 			dao=new EmployeeDAOJDBCImpl();
 		}else if(dbInteractionType.equals("hibernate")){
-				dao=new EmployeeDAOHibernateImpl();
+				dao=new EmployeeDAOHibernateImpl2();
 		}
 		return dao;
 	}
