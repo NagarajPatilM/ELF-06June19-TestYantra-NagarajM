@@ -17,7 +17,7 @@ public class Savedemo {
 	public static void main(String[] args) throws Exception {
 		Configuration cfg = new Configuration();
 		cfg.configure("hibernate.cfg.xml");
-//		cfg.addAnnotatedClass(EmployeeInfoBean.class);
+		cfg.addAnnotatedClass(EmployeeOtherInfoBean.class);
 
 		SessionFactory factory = cfg.buildSessionFactory();
 		Session session = factory.openSession();
@@ -27,7 +27,6 @@ public class Savedemo {
 
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
 		Date date = format.parse("2018-02-07");
-
 		/*
 		 * empInfo.setId(16); empInfo.setAccountNo(13256276); empInfo.setHiredate(date);
 		 * empInfo.setAge(23); empInfo.setDeptId(50);
@@ -42,7 +41,7 @@ public class Savedemo {
 		empOtherInfo.setEmergencContactNo(25623778);
 		empOtherInfo.setEmergencyContactName("avf");
 		empOtherInfo.setFatherNm("sgfg");
-		empOtherInfo.setId(20);
+		empOtherInfo.setId(8);
 		empOtherInfo.setIsChallenged(false);
 		empOtherInfo.setIsmarried(true);
 		empOtherInfo.setMotherNm("ghsj");
