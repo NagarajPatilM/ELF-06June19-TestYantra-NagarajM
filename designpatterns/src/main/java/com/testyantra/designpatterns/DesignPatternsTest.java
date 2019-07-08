@@ -1,5 +1,7 @@
 package com.testyantra.designpatterns;
 
+import java.util.ArrayList;
+
 import com.testyantra.designpatterns.beans.EmployeeInfoBean;
 import com.testyantra.designpatterns.dao.EmployeeDAO;
 import com.testyantra.designpatterns.dao.EmployeeDAOFactory;
@@ -11,13 +13,13 @@ public class DesignPatternsTest {
 
 	public static void main(String[] args) {
 		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
-		printInfo(dao.getEmployeeInfo(1));
-		printInfo(dao.getEmployeeInfo("2"));
+		//printInfo(dao.getEmployeeInfo(1));
+		//printInfo(dao.getEmployeeInfo("2"));
 
-		/*
-		 * ArrayList<EmployeeInfoBean> beans = dao.getAllEmployeeInfoBeans(); for
-		 * (EmployeeInfoBean bean : beans) { printInfo(bean); }
-		 */
+		ArrayList<EmployeeInfoBean> beans = dao.getAllEmployeeInfoBeans();
+		for (EmployeeInfoBean bean : beans) {
+			printInfo(bean);
+		}
 
 		// create an employee info
 
@@ -34,7 +36,7 @@ public class DesignPatternsTest {
 		empInfo.setPhoneNo(936782382);
 		empInfo.setSalary(60000);
 		// log.info(" " + dao.createEmployeeInfo(empInfo));
-		log.info(" " + dao.deleteEmployeeInfo(2));
+		// log.info(" " + dao.deleteEmployeeInfo(5));
 	}// End of main
 
 	private static void printInfo(EmployeeInfoBean bean) {
@@ -51,6 +53,7 @@ public class DesignPatternsTest {
 			log.info(" Dob :" + bean.getDob());
 			log.info(" " + bean.getHiredate());
 			log.info(" " + bean.getDesignation());
+			log.info(" =======================================================");
 
 		}
 	}
