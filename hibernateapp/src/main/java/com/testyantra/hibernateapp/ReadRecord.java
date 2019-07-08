@@ -21,7 +21,15 @@ public class ReadRecord {
 		empOtherInfo = session.get(EmployeeOtherInfoBean.class, 1);
 		log.info(" " + empOtherInfo.getId());
 		log.info(" " + empOtherInfo.getFatherNm());
+		log.info(" " + empOtherInfo.getMotherNm());
 		log.info(" " + empOtherInfo.getIsChallenged());
+		log.info(" " + empOtherInfo.getBloodGrp());
+		log.info(" " + empOtherInfo.getNationality());
+		log.info(" " + empOtherInfo.getPan());
+		log.info(" " + empOtherInfo.getPassport());
+		log.info(" "+empOtherInfo.getReligion());
+		log.info(" "+empOtherInfo.getSpouseNm());
+		log.info(" "+empOtherInfo.getIsmarried());
 
 	}
 
