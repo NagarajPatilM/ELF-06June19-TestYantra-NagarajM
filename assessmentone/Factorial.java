@@ -15,7 +15,11 @@ public class Factorial {
 			}
 			return fact;
 		};
+		Integer a=5;
 		log.info("" + fac.apply(5));
+		int b=fac.apply(5);
+		int c=b+5;
+		log.info(" "+c);
 	}
 
 }
