@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- <bean/> definitions here -->
+
+	<bean id="bean" class="com.testyantra.beans.MessageBean">
+		<property name="message" value="India!!"></property>
+	</bean>
+
+
+	<bean id="empInfo" class="com.testyantra.beans.EmpInfo" scope="singleton" init-method="init" destroy-method="destroy">
+		<property name="name" value="nag"></property>
+		<property name="salary" value="20000.0"></property>
+	</bean>
+
+	<!-- <bean id="empInfoo" class="com.testyantra.beans.EmpInfo">
+		<property name="name" value="virat"></property>
+		<property name="salary" value="1000000.0"></property>
+	</bean>  -->
+
+
+</beans>
