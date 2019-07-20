@@ -18,23 +18,29 @@ import com.testyantra.emp.dao.EmployeeDAOHibernateImplTwo;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			                                   throws ServletException, IOException {
+			throws ServletException, IOException {
+		
+		//check cookies are disabled or not
+		if(request.getCookies()==null) {
+			request.getRequestDispatcher("cookiesdisabled.html").include(request, response);
+			return;
+		}
 
 		int id = Integer.parseInt(request.getParameter("id"));
 		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
 		EmployeeInfoBean bean = dao.getEmployeeInfo(id);
 
-		// String name=request.getParameter("name");
 		String password = request.getParameter("password");
 
 		// valid credentials; create a session
 		if (bean != null && password.equals(bean.getPassword())) {
 
 			HttpSession session = request.getSession(true);
+			session.setAttribute("data", bean);
 
 			String url = "./welcome";
 			request.setAttribute("bean", bean);
@@ -43,16 +49,15 @@ public class LoginServlet extends HttpServlet {
 
 		} else {
 			PrintWriter out = response.getWriter();
-
 			String path = "employeelogin.html";
-			out.println("invalid id");
-			/*
-			 * RequestDispatcher dispatcher=request.getRequestDispatcher(path);
-			 * dispatcher.include(request,response);
-			 */
-			response.sendRedirect(path);
+			out.println("<html><span style='color:red'><h1>invalid credentials!!</h1><span></html>");
+			response.setContentType("text/html");
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+			dispatcher.include(request, response);
+
 		}
 
 	}
 
-}//End of servlet
+}// End of servlet

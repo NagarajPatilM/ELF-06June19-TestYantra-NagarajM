@@ -27,7 +27,7 @@ public class SearchServlet extends HttpServlet{
 		HttpSession session=req.getSession(false);
 		if(session==null) {
 			//Invalid session; Generate login page with error info
-			out.print("<h1><span style='coior:red'>Invalid session</h1>");
+			out.print("<h1><span style='color:red'>Invalid session,please login</h1>");
 			out.print("<BR><BR>");
 			RequestDispatcher dispatcher=req.getRequestDispatcher("employeelogin.html");
 			dispatcher.include(req, resp);
@@ -74,7 +74,7 @@ public class SearchServlet extends HttpServlet{
 				out.print("      <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button") ;
 				out.print("    </form>                                                                            ") ;
 				
-				out.print("    <div><a class=\"ml-auto\" href=\"employeelogin.html\">Logout</a>   </div>                                          ") ;
+				out.print("    <div><a class=\"ml-auto\" href=\"logout\">Logout</a>   </div>                                          ") ;
 				out.print("</nav>                                                                                 ") ;
 				out.print("                                                                                       ") ;
 				out.print("<table class=\"table table-borderless\">  ");

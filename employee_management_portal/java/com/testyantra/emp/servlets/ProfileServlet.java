@@ -9,21 +9,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.testyantra.emp.bean.EmployeeInfoBean;
 
-@WebServlet("/welcome")
-public class WelcomeServlet extends HttpServlet {
-	
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+@WebServlet("/profile")
+public class ProfileServlet extends HttpServlet{
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			                        throws ServletException, IOException {
-		HttpSession session=req.getSession(false);
 		PrintWriter out=resp.getWriter();
-		
-		if(session!=null){
 		EmployeeInfoBean bean=(EmployeeInfoBean) req.getAttribute("bean");
-		
+
 		if(bean==null) {
 			out.print("<html>");
 			out.print("<body>");
@@ -58,9 +54,6 @@ public class WelcomeServlet extends HttpServlet {
 			out.print("      <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button") ;
 			out.print("    </form>                                                                            ") ;
 			
-			
-			
-			
 			//out.print("    <a href=\"./html/login.html\">Logout</a>                                             ") ;
 			out.print("    <a href=\"./employeelogin.html\">Logout</a>                                             ") ;
 			out.print("</nav>                                                                                 ") ;
@@ -83,16 +76,6 @@ public class WelcomeServlet extends HttpServlet {
 			out.print("</body>                                                                                ") ;
 			out.print("</html>                                                                                ") ;
 		}
-		}
-		else {
-			String path="employeelogin.html";
-			resp.setContentType("text/html");
-			out.println("invalid session!! please login again ");
-			RequestDispatcher dispatcher=req.getRequestDispatcher(path);
-			dispatcher.include(req,resp);
-			
-		}
+		
 	}
-
-
 }

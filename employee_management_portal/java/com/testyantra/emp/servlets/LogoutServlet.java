@@ -23,7 +23,7 @@ public class LogoutServlet extends HttpServlet {
 			session.invalidate();
 		}
 		PrintWriter out=resp.getWriter();
-		out.print("<html><span style='color:green'>thanhs for visiting!!</span></html>");
+		out.print("<html><span style='color:green'>thanks for visiting!!</span></html>");
 		RequestDispatcher dispatcher=req.getRequestDispatcher("employeelogin.html");
 		dispatcher.include(req, resp);
 	}//End of doget( )
