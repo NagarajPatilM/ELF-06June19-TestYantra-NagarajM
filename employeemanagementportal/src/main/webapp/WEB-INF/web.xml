@@ -1,0 +1,23 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+ <!-- 
+  <servlet>
+  	<servlet-name>LoginFailJSP</servlet-name>
+  	<jsp-file>LoginFail.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>LoginFailJSP</servlet-name>
+  <url-pattern>/loginfail</url-pattern>
+  </servlet-mapping> -->
+  
+  <session-config>
+  <!-- Time in min -->
+  <session-timeout>1</session-timeout>
+  </session-config>
+  
+</web-app>
