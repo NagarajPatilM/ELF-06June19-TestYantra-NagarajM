@@ -20,7 +20,7 @@ public class DeleteRecord {
 		factory=HibernateUtil.getSessionFactory();
 		Session session=factory.openSession();
 
-		EmployeeOtherInfoBean empOtherInfoBean = session.get(EmployeeOtherInfoBean.class, 6);
+		EmployeeOtherInfoBean empOtherInfoBean = session.get(EmployeeOtherInfoBean.class, 101);
 		Transaction transaction = session.beginTransaction();
 		
 		session.delete(empOtherInfoBean);

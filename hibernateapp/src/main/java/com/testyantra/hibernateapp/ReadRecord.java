@@ -15,8 +15,7 @@ public class ReadRecord {
 
 	public static void main(String[] args) {
 
-		SessionFactory factory = HibernateUtil.getSessionFactory();
-		Session session = factory.openSession();
+		Session session =  HibernateUtil.openSession();
 		EmployeeOtherInfoBean empOtherInfo = new EmployeeOtherInfoBean();
 		empOtherInfo = session.get(EmployeeOtherInfoBean.class, 1);
 		log.info(" " + empOtherInfo.getId());
