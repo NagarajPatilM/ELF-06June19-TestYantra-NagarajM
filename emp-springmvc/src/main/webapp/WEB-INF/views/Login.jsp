@@ -1,3 +1,4 @@
+<%@ page session="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +30,16 @@
     <div class="container margin-for-element">
     <h2>Login Page</h2>
     <br><br>
-        <form class="form-size" action="./submitlogin1" method="POST">
+        <form class="form-size" action="./login" method="POST">
+       <%--  
+        <%String res=request.getParameter("msg");
+    		if(res!=null){ %>
+    		
+    			<h4><%=res%></h4>
+    		<% } %>	
+    		 --%>
+    	     	${bean}   
+  
             <input type="number" class="form-control margin-bottom-input" name="id" placeholder="Enter id"/>
             <div class="form-control">
                 <input type="password" id="pwd"  name="password" style="border: none !important;width:340px;" placeholder="Enter password"/>
