@@ -5,21 +5,22 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.testyantra.hibernateapp.onetoone.EmployeeInfoBean;
-import com.testyantra.hibernateapp.dto.EmployeeOtherInfoBean;
+import com.testyantra.hibernateapp.onetoone.EmployeeOtherInfoBean;
 
 public class HibernateUtil {
 
 	private static SessionFactory factory = null;
 
 	public static SessionFactory buildSessionFactory() {
-
-		return new Configuration().configure("hibernate.cfg.xml")
-				.addAnnotatedClass(EmployeeOtherInfoBean.class).buildSessionFactory();
 		/*
-		 * return new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(
-		 * EmployeeInfoBean.class)
+		 * return new Configuration().configure("hibernate.cfg.xml")
 		 * .addAnnotatedClass(EmployeeOtherInfoBean.class).buildSessionFactory();
 		 */
+		
+		  return new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(
+		  EmployeeInfoBean.class)
+		  .addAnnotatedClass(EmployeeOtherInfoBean.class).buildSessionFactory();
+		 
 
 
 		/*
