@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.testyantra.emp.bean.EmployeeInfoBean;
+import com.testyantra.empspringmvc.bean.EmployeeInfoBean;
 
 import lombok.extern.java.Log;
 
