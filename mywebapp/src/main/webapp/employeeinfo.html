@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<!--         <form method="Post" action="http://Mywebpp-env.63yi5ymmnp.ap-south-1.elasticbeanstalk.com/insert"  class="col-md-10 offset-1" style="background-color : rgb(236, 236, 114)"> -->
+         <form method="Post" action="http://localhost:8081/mywebapp/createempinfo"  class="col-md-10 offset-1" style="background-color : rgb(236, 236, 114)">
+                <h3 style="text-align: center;padding: 20px;">Employee Information</h3>
+                <hr>   
+            <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">ID</label>
+                    <input type="text" class="form-control" name='id'  placeholder="Please Enter ID">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Account Number</label>
+                    <input type="text" class="form-control"   name='accountNumber' placeholder="Please Enter Account Number ">
+                  </div>
+              
+                </div>
+                <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputEmail4">Name</label>
+                          <input type="text" class="form-control"  name='name'  placeholder="Please Enter Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputPassword4">Email Id</label>
+                          <input type="email" class="form-control"   name='email' placeholder="Please Enter Email Id ">
+                        </div>
+                      
+                      </div>
+              
+                      <div class="form-row">
+                        <div  class="form-group col-md-6">
+                            <label for="inputEmail4">Age</label><br>
+                            <input type="text" class="form-control"  name='age' placeholder="Please Enter Age">
+                       
+                        </div>
+                         
+                            <div class="form-group col-md-6">
+                              
+                              <label for="inputPassword4">Designation</label>
+                          
+                              <input type="text" class="form-control"  name='designation' placeholder="Please EnterDesignation">
+                            </div>
+
+                           
+                         
+                          </div>
+                          <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <label name='gender' for="inputEmail4">Gender</label><br>
+                                  <select style="        width: 640.75px;height: 39.99px;" >
+                                      <option value="" disabled="disabled" selected="selected">Please select</option>
+                                    <option value="Male">Male</option>
+                                      <option value="Female">Female</option>
+                                     
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="inputPassword4">Date Of Birth</label>
+                                  <input type="date" class="form-control"   name='dob' placeholder="dd-mm-yyyy">
+                                </div>
+                                
+                              </div>
+
+                
+                              <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="inputEmail4">Salary</label>
+                                      <input type="text" class="form-control"  name='salary' placeholder="Please EnterDesignation">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="inputPassword4">Department ID</label>
+                                      <input type="text" class="form-control"  name='departmentId' placeholder="Please Enter Department ID ">
+
+                                     
+                                    </div>
+                              </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                          <label for="inputEmail4">Phone Number</label>
+                                          <input type="text" class="form-control"  name='phone'  placeholder="Please Enter Phone Number">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                          <label for="inputPassword4">Manager ID</label>
+                                          <input type="text" class="form-control"   name='managerId' placeholder="Please Enter Manager ID ">
+    
+                                         
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="form-row">
+                                          <div class="form-group col-md-6">
+                                              <label name='joiningDate' for="inputPassword4">Date Of Joining</label>
+                                              <input type="date" class="form-control"  placeholder="dd-mm-yyyy">
+                                            </div>
+                                            <div style="text-align: center;padding: 0px 102px 20px;margin: 30px;"  class="btn-group" role="group" >  
+                                                <button style="width: 180px;height: 40px;" type="reset"  class="btn btn-outline-secondary">Reset</button>
+                                                <button  style="width: 180px;height: 40px;" type="submit"  class=" btn btn-outline-primary" >Submit</button>
+                                            
+                                              </div>
+                                        </div>
+
+
+                                   
+
+
+                                    </div>
+
+              </form>
+
+
+              
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
