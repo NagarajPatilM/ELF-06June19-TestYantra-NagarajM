@@ -6,7 +6,6 @@ import java.util.List;
 import com.testyantra.empspringmvc.bean.EmployeeInfoBean;
 
 
-
 public interface EmployeeDAO {
 	  List<EmployeeInfoBean> getAllEmployeeInfo();
 	  EmployeeInfoBean getEmployeeInfo(String id);

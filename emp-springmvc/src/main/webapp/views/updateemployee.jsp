@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import="javax.print.attribute.standard.MediaSize.Other"%>
+<%@page import="com.testyantra.empspringmvc.bean.EmployeeInfoBean"%>
 <html>
 
 <head>
@@ -26,6 +28,9 @@
 </head>
 
 <body>
+<%
+EmployeeInfoBean infoBean=(EmployeeInfoBean)session.getAttribute("infoBean");
+%>
 
 	<div class="container">
 		<h2>EMPLOYEE REGISTRATION</h2>
@@ -49,63 +54,69 @@
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>ID</label> <input class="form-control" type="number"
-												required name="id" id="id1" placeholder="Please Enter ID" />
+												required name="id" id="id1" placeholder="Please Enter ID" value="<%=infoBean.getId()%>" />
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Name</label> <input class="form-control" type="text"
-												name="name" placeholder="Please Enter Name" />
+												name="name" placeholder="Please Enter Name" value="<%=infoBean.getName()%>" />
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Password</label> <input class="form-control"
 												type="password" name="password" id="password"
-												placeholder="Please Enter Password" onkeyup="validate()" />
+												placeholder="Please Enter Password" value="<%=infoBean.getPassword()%>" onkeyup="validate()" />
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Confirm Password</label> <input class="form-control"
 												type="password" id="cfpassword"
-												placeholder="Please Confirm Password" onkeyup="validate()" />
+												placeholder="Please Confirm Password"  onkeyup="validate()" />
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Age</label> <input class="form-control" type="number"
-												name="age" placeholder="Please Enter Age" />
+												name="age" placeholder="Please Enter Age" value="<%=infoBean.getAge()%>" />
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Gender</label> <select class="form-control"
 												name="gender">
+												<%if(infoBean.getGender().equals("male")) {%>
 												<option>-- select one --</option>
-												<option value="male">Male</option>
+												<option value="male" selected="selected">Male</option>
 												<option value="female">Female</option>
+												<%}else{%>
+												<option value="male" >Male</option>
+												<option value="female" selected="selected">Female</option>
+												<%}%>
+												
 											</select>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Salary</label> <input class="form-control" type="text"
-												name="salary" placeholder="Please Enter Salary" />
+												name="salary" placeholder="Please Enter Salary" value="<%=infoBean.getSalary()%>" />
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Phone Number</label> <input class="form-control"
 												type="number" name="phone"
-												placeholder="Please Enter Phone Number" />
+												placeholder="Please Enter Phone Number" value="<%=infoBean.getPhone()%>"/>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Joining Date</label> <input class="form-control"
 												type="date" name=joining_date
-												placeholder="Please Enter Joining Date" />
+												placeholder="Please Enter Joining Date" value="<%=infoBean.getJoiningDate()%>"/>
 										</div>
 									</div>
 								</div>
@@ -114,41 +125,41 @@
 										<div class="col-md-12 form-group">
 											<label>Account Number</label> <input class="form-control"
 												type="number" name="account_number"
-												placeholder="Please Enter Account Number" />
+												placeholder="Please Enter Account Number" value="<%=infoBean.getAccountNumber()%>"'/>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Email Id</label> <input class="form-control"
 												type="email" name="email"
-												placeholder="Please Enter Email ID" />
+												placeholder="Please Enter Email ID" value="<%=infoBean.getEmail()%>"/>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Designation</label> <input class="form-control"
 												type="text" name="designation"
-												placeholder="Please Enter Designation" />
+												placeholder="Please Enter Designation" value="<%=infoBean.getDesignation()%>" />
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>DOB</label> <input class="form-control" type="date"
-												name=dob placeholder="Please Enter DOB" />
+												name=dob placeholder="Please Enter DOB" value="<%=infoBean.getDob()%>" />
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Department ID</label> <input class="form-control"
 												type="number" name="department_id"
-												placeholder="Please Enter Department ID" />
+												placeholder="Please Enter Department ID" value="<%=infoBean.getDeptInfoBean().getDepartmentId()%>"/>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Manager ID</label> <input class="form-control"
 												type="number" name="manager_id"
-												placeholder="Please Enter Manager ID" />
+												placeholder="Please Enter Manager ID"  value=<%=infoBean.getMngrId()%>"/>
 										</div>
 									</div>
 									<br>
@@ -183,7 +194,7 @@
 										<div class="col-md-12 form-group">
 											<label>PAN Number</label> <input class="form-control"
 												name="otherInfo.pan" type="text"
-												placeholder="Please Enter PAN Number" />
+												placeholder="Please Enter PAN Number" value="<%=infoBean.getEmployeeOtherInfoBean().getPan()%>"/>
 										</div>
 									</div>
 									<div class="row">
@@ -226,7 +237,7 @@
 											<label>Emergency Contact Number</label> <input
 												name="otherInfo.emergencyCN" class="form-control"
 												type="number"
-												placeholder="Please Enter Emergency Contact Number" />
+												placeholder="Please Enter Emergency Contact Number" value="<%=infoBean.getEmployeeOtherInfoBean().getEmergencyCNM()%>"/>
 										</div>
 									</div>
 									<div class="row">
@@ -234,17 +245,31 @@
 											<label>Emergency Contact Name</label> <input
 												name="otherInfo.emergencyCP" class="form-control"
 												type="text"
-												placeholder="Please Enter Emergency Contact Name" />
+												placeholder="Please Enter Emergency Contact Name" value="<%=infoBean.getEmployeeOtherInfoBean().getEmergencyCP()%>"/>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Nationality</label> <select
 												name="otherInfo.nationality" class="form-control">
-												<option>--select one--</option>
-												<option value="india">India</option>
+												
+												<%switch(infoBean.getEmployeeOtherInfoBean().getNationality()) {
+												/* <option>--select one--</option> */
+												case("india"):%>
+												<option value="india" selected="selected">India</option> 
 												<option value="japan">Japan</option>
 												<option value="china">China</option>
+												<%break; 
+												
+											    case("japan"):%>
+											    <option value="japan" selected="selected">Japan</option>
+											   <option value="china">China</option>
+											   <%break; 
+											  
+											   case("china"): %>
+											   <option value="india" >India</option> 
+											   <option value="japan">Japan</option>
+											   <option value="china" selected="selected">China</option> 
 											</select>
 										</div>
 									</div>
@@ -264,7 +289,7 @@
 										<div class="col-md-12 form-group">
 											<label>Father Name</label> <input name="otherInfo.fatherNM"
 												class="form-control" type="text"
-												placeholder="Please Enter Father Name" />
+												placeholder="Please Enter Father Name" value="<%=infoBean.getEmployeeOtherInfoBean().getFatherNM()%>"/>
 										</div>
 									</div>
 
@@ -274,21 +299,21 @@
 										<div class="col-md-12 form-group">
 											<label>Mother Name</label> <input name="otherInfo.motherNM"
 												class="form-control" type="text"
-												placeholder="Please Enter Mother Name" />
+												placeholder="Please Enter Mother Name" value="<%=infoBean.getEmployeeOtherInfoBean().getMotherNM()%>"/>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Spouse Name</label> <input name="otherInfo.spouseNM"
 												class="form-control" type="text"
-												placeholder="Please Enter Spouse Name" />
+												placeholder="Please Enter Spouse Name" value="<%=infoBean.getEmployeeOtherInfoBean().getSpouseNM()%>"/>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<label>Passport Number</label> <input
 												name="otherInfo.passport" class="form-control" type="text"
-												placeholder="Please Enter Passport Number" />
+												placeholder="Please Enter Passport Number" value="<%=infoBean.getEmployeeOtherInfoBean().getPassport()%>"/>
 
 										</div>
 									</div>
@@ -296,7 +321,7 @@
 										<div class="col-md-12 form-group">
 											<label>Aadhar Number</label> <input name="otherInfo.adhar"
 												class="form-control" type="text"
-												placeholder="Please Enter Aadhar Number" />
+												placeholder="Please Enter Aadhar Number" value="<%=infoBean.getEmployeeOtherInfoBean().getAdhar()%>"/>
 
 										</div>
 									</div>

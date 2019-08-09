@@ -2,53 +2,74 @@ package com.testyantra.empspringmvc.bean;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+
 import lombok.Data;
+import lombok.ToString;
+
 @Data
 @Entity
-@Table(name="employee_info")
-public class EmployeeInfoBean implements Serializable{
+@Table(name = "employee_info")
+public class EmployeeInfoBean implements Serializable {
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@PrimaryKeyJoinColumn
-	private EmployeeOtherInfoBean otherInfo;
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "infoBean")
+	private EmployeeOtherInfoBean employeeOtherInfoBean;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy ="addressPKBean.infoBean")
+	private List<EmployeeAddressInfoBean> addressInfoBeans;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy ="experiencePKBean.infoBean")
+	private List<EmployeeExperienceInfoBean> experienceInfoBeans;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy ="educationPKBean.infoBean")
+	private List<EmployeeEducationInfoBean> educationInfoBeans;
+	
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "infoBeans")
+	private List<TrainingInfoBean> trainingInfoBeans;
 	
 	@Id
-	@Column(name="ID")
+	@Column(name = "id")
 	private int id;
-	@Column(name="Name")
-	private String empName;
-	@Column(name="AGE")
+	@Column(name = "name")
+	private String name;
+	@Column(name = "age")
 	private int age;
-	@Column(name="GENDER")
+	@Column(name = "gender")
 	private String gender;
-	@Column(name="SALARY")
+	@Column(name = "salary")
 	private double salary;
-	@Column(name="PHONE")
+	@Column(name = "phone")
 	private long phone;
-	@Column(name="hiredate")
+	@Column(name = "joining_date")
 	private Date joiningDate;
-	@Column(name="ACCOUNT")
+	@Column(name = "account_number")
 	private long accountNumber;
-	@Column(name="EMAIL")
+	@Column(name = "email")
 	private String email;
-	@Column(name="DESIGNATION")
+	@Column(name = "designation")
 	private String designation;
-	@Column(name="DOB")
+	@Column(name = "dob")
 	private Date dob;
-	@Column(name="DEPT_ID")
-	private int departmentId;
-	@Column(name="MNGR_ID")
-	private int managerId;
-	 @Column(name="password")
+	@Column(name = "password")
 	private String password;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "department_id", referencedColumnName = "dept_id")
+	private DepartmentInfoBean deptInfoBean;
+	@ManyToOne
+	@JoinColumn(name = "mngr_id", referencedColumnName = "id")
+	private EmployeeInfoBean mngrId;
 	
 }

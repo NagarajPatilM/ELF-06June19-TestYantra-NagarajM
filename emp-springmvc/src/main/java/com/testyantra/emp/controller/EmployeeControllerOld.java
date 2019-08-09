@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.testyantra.emp.bean.EmployeeInfoBean;
 import com.testyantra.emp.dao.EmployeeDAO;
 import com.testyantra.emp.dao.EmployeeDAOFactory;
 
@@ -59,8 +58,8 @@ public class EmployeeControllerOld {
 		return "createemployee";
 	}
 
-	@PostMapping("/create")
-	public String createEmployee(EmployeeInfoBean bean) {
+/*	@PostMapping("/create")
+	public String createEmployee(EmployeeInfoBeanold bean) {
 		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
 		boolean b = dao.createEmployeeInfo(bean);
 		if (b) {
@@ -68,6 +67,6 @@ public class EmployeeControllerOld {
 		} else {
 			return "not created";
 		}
-
+*/
 	}
-}
+

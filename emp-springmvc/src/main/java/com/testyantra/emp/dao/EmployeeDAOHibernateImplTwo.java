@@ -8,8 +8,6 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.testyantra.emp.util.HibernateUtil;
-import com.testyantra.emp.util.HibernateUtilOld;
 import com.testyantra.empspringmvc.bean.EmployeeInfoBean;
 
 

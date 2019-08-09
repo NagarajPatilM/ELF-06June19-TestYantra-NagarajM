@@ -16,7 +16,7 @@ import lombok.extern.java.Log;
 public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 
 	public  ArrayList<EmployeeInfoBean> getAllEmployeeInfo() {
-		String dbUrl = "jdbc:mysql://localhost:3306/techchefs_db";
+		String dbUrl = "jdbc:mysql://localhost:3306/testyantra_db";
 		String query = "select * from employee_info";
 
 		try (Connection connection = DriverManager.getConnection(dbUrl, "root", "root");
@@ -31,7 +31,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 				EmployeeInfoBean bean=new EmployeeInfoBean();
 				
 				bean.setId(rs.getInt("id"));
-				bean.setEmpName(rs.getString("name"));
+				//bean.setEmpName(rs.getString("name"));
 				bean.setAge(rs.getInt("age"));
 				bean.setPhone(rs.getLong("phone"));
 				bean.setGender(rs.getString("gender"));
@@ -41,8 +41,8 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 				bean.setEmail(rs.getString("email"));
 				bean.setDesignation(rs.getString("designation"));
 				bean.setDob(rs.getDate("dob"));
-				bean.setDepartmentId(rs.getInt("dept_id"));
-				bean.setManagerId(rs.getInt("mngr_id"));
+				//bean.setDepartmentId(rs.getInt("dept_id"));
+				//bean.setManagerId(rs.getInt("mngr_id"));
 				arrayList.add(bean);
 			}
 			return arrayList;
@@ -91,8 +91,8 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 
 			// 4."Process the results" returned by "SQL queries"
 			while (rs.next()) {
-				bean.setId(rs.getInt("id"));
-				bean.setEmpName(rs.getString("name"));
+				//bean.setId(rs.getInt("id"));
+				//bean.setEmpName(rs.getString("name"));
 				bean.setAge(rs.getInt("age"));
 				bean.setPhone(rs.getLong("phone"));
 				bean.setGender(rs.getString("gender"));
@@ -102,8 +102,8 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 				bean.setEmail(rs.getString("email"));
 				bean.setDesignation(rs.getString("designation"));
 				bean.setDob(rs.getDate("dob"));
-				bean.setDepartmentId(rs.getInt("dept_id"));
-				bean.setManagerId(rs.getInt("mngr_id"));
+				//bean.setDepartmentId(rs.getInt("dept_id"));
+				//bean.setManagerId(rs.getInt("mngr_id"));
 
 			}
 

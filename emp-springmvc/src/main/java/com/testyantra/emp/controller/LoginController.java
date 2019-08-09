@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import static com.testyantra.emp.common.EMPConstants.PROP_FILENAME;
 import static com.testyantra.emp.common.EMPConstants.VIEW_HOMEPAGE;
 import static com.testyantra.emp.common.EMPConstants.VIEW_LOGINPAGE;
+import static com.testyantra.emp.common.EMPConstants.DB_INTERACTIONTYPE;
 
 import com.testyantra.emp.dao.EmployeeDAO;
-import com.testyantra.emp.dao.EmployeeDAOFactoryOld;
 import com.testyantra.empspringmvc.bean.EmployeeInfoBean;
 
 @Controller
@@ -26,7 +26,7 @@ import com.testyantra.empspringmvc.bean.EmployeeInfoBean;
 public class LoginController {
 
 	@Autowired
-	@Qualifier("hibernate")
+	@Qualifier(DB_INTERACTIONTYPE)
 	EmployeeDAO dao;
 
 	@GetMapping("/loginpage")
@@ -36,8 +36,8 @@ public class LoginController {
 
 	@PostMapping("/authenticate")
 	public String getHomePage(int id, String password, HttpServletRequest request, 
-			                                           @Value("${fail}") String errMsg,
-			                                      @Value("${dbInteractionType}") String dbInteractionType) {
+			                                       @Value("${fail}") String errMsg,
+			                                       @Value("${dbInteractionType}") String dbInteractionType) {
 		
 		//EmployeeInfoBean bean = EmployeeDAOFactoryOld.getInstance(dbInteractionType).getEmployeeInfo(id); 
 	// old way of creating factory object without Spring 

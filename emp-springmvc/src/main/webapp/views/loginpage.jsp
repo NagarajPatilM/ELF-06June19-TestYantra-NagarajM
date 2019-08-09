@@ -50,7 +50,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
             <br><br>
             <div class="row">
-                <button class="col-6 btn btn-primary"><a href="Employee information.html" style="color: white !important">Create Account</a></button>
+                <button class="col-6 btn btn-primary"><a href="../employee/createemployee" style="color: white !important">Create Account</a></button>
                 <button  class="col-6 btn btn-primary">Forgot Password</button>
             </div>
         </form>
