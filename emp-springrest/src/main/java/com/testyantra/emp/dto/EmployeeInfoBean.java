@@ -32,38 +32,38 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @SuppressWarnings("serial")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 //@XmlRootElement(name = "employee-info-bean")
-@JsonRootName(value="employee-info")
-@XmlAccessorType(XmlAccessType.FIELD)
+@JsonRootName(value = "employee-info")
+//@XmlAccessorType(XmlAccessType.FIELD)
 @Entity
 @Table(name = "employee_info")
 public class EmployeeInfoBean implements Serializable {
 
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "infoBean")
-	//@XmlElement(name = "other-info")
+	// @XmlElement(name = "other-info")
 	@JsonProperty(value = "other-info")
 	private EmployeeOtherInfoBean otherInfo;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "addressPKBean.infoBean")
 	@LazyCollection(LazyCollectionOption.FALSE)
-	//@XmlElement(name = "address-info-beans")
-	@JsonProperty(value ="address-info-bean")
+	// @XmlElement(name = "address-info-beans")
+	@JsonProperty(value = "address-info-bean")
 	private List<EmployeeAddressInfoBean> addressInfoBeans;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "experiencePKBean.infoBean")
 	@LazyCollection(LazyCollectionOption.FALSE)
-	//@XmlElement(name = "experience-info-beans")
-	@JsonProperty(value="experience-info-bean")
+	// @XmlElement(name = "experience-info-beans")
+	@JsonProperty(value = "experience-info-bean")
 	private List<EmployeeExperienceInfoBean> experienceInfoBeans;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "educationPKBean.infoBean")
 	@LazyCollection(LazyCollectionOption.FALSE)
-	//@XmlElement(name = "education-info-beans")
-	@JsonProperty(value ="education-info-beans")
+	// @XmlElement(name = "education-info-beans")
+	@JsonProperty(value = "education-info-beans")
 	private List<EmployeeEducationInfoBean> educationInfoBeans;
 
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "infoBeans")
 	@LazyCollection(LazyCollectionOption.FALSE)
-	//@XmlElement(name = "training-info-beans")
+	// @XmlElement(name = "training-info-beans")
 	@JsonProperty(value = "training-info-beans")
 	private List<TrainingInfoBean> trainingInfoBeans;
 
@@ -81,18 +81,20 @@ public class EmployeeInfoBean implements Serializable {
 	private String gender;
 
 	@Column(name = "salary")
+	//@JsonProperty(value = "sal")
 	private double salary;
 
 	@Column(name = "phone")
 	private long phone;
 
 	@Column(name = "joining_date")
-	@XmlElement(name = "joining-date")
-
+	// @XmlElement(name = "joining-date")
+	//@JsonProperty(value = "joining-date")
 	private Date joiningDate;
-	@Column(name = "account_number")
 
-	@XmlElement(name = "account-number")
+	@Column(name = "account_number")
+	// @XmlElement(name = "account-number")
+	//@JsonProperty(value = "account-number")
 	private long accountNumber;
 
 	@Column(name = "email")
@@ -115,7 +117,7 @@ public class EmployeeInfoBean implements Serializable {
 //	@XmlElement(name = "department-id")
 //	private int departmentId;
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	@JoinColumn(name = "mngr_id", referencedColumnName = "id")
 	private EmployeeInfoBean mngrId;
 

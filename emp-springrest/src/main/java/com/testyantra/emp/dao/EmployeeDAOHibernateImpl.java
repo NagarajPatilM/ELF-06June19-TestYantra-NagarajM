@@ -15,11 +15,10 @@ import lombok.extern.java.Log;
 
 @Log
 public final class EmployeeDAOHibernateImpl implements EmployeeDao {
-	
+
 	@Autowired
 	SessionFactory sessionFactory;
-	
-	
+
 	public List<EmployeeInfoBean> getAllEmployeeInfo() {
 		List<EmployeeInfoBean> beans = null;
 		try (Session session = sessionFactory.openSession();) {
@@ -30,23 +29,22 @@ public final class EmployeeDAOHibernateImpl implements EmployeeDao {
 		return beans;
 
 	}
-	
-	public List<EmployeeInfoBean> getAllEmployeeInfoWithRestrictions(String condition){
+
+	public List<EmployeeInfoBean> getAllEmployeeInfoWithRestrictions(String condition) {
 		try (Session session = sessionFactory.openSession();) {
-		String hql = "from EmployeeInfoBean where str(id) like :id";
-		Query query = session.createQuery(hql);
+			String hql = "from EmployeeInfoBean where str(id) like :id";
+			Query query = session.createQuery(hql);
 //		query.setParameter("name", condition+"%");
-		query.setParameter("id", condition+"%");
+			query.setParameter("id", condition + "%");
 //		Criteria criteria = session.createCriteria(EmployeeInfoBean.class).add(Restrictions.like("id", Integer.parseInt(condition)));
-		List<EmployeeInfoBean> beans = query.list();
-		return beans;
-		}
-		catch(Exception ex) {
+			List<EmployeeInfoBean> beans = query.list();
+			return beans;
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			return null;
 		}
 	}
-	
+
 	public EmployeeInfoBean getEmployeeInfo(String id) {
 		try {
 			return getEmployeeInfo(Integer.parseInt(id));
@@ -67,7 +65,6 @@ public final class EmployeeDAOHibernateImpl implements EmployeeDao {
 
 			return bean;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -91,24 +88,22 @@ public final class EmployeeDAOHibernateImpl implements EmployeeDao {
 
 	@Override
 	public boolean createEmployeeInfo(EmployeeInfoBean bean) {
-		// TODO Auto-generated method stub
 		return saveOrUpdate(bean);
 
 	}
 
 	@Override
 	public boolean updateEmployeeInfo(EmployeeInfoBean bean) {
-		// TODO Auto-generated method stub
 		return saveOrUpdate(bean);
 	}
 
 	@Override
 	public boolean deleteEmployeeInfo(int id) {
 		Transaction txn = null;
-		EmployeeInfoBean bean = new EmployeeInfoBean();
-		bean.setId(id);
+		// EmployeeInfoBean bean = new EmployeeInfoBean();
+		// bean.setId(id);
 		try (Session session = sessionFactory.openSession();) {
-
+			EmployeeInfoBean bean = getEmployeeInfo(id);
 			txn = session.beginTransaction();
 			session.delete(bean);
 			txn.commit();
@@ -124,14 +119,12 @@ public final class EmployeeDAOHibernateImpl implements EmployeeDao {
 
 	@Override
 	public boolean deleteEmployeeInfo(String id) {
-		// TODO Auto-generated method stub
 		return deleteEmployeeInfo(Integer.parseInt(id));
 	}
 
 	@Override
 	public List<EmployeeInfoBean> getAllEmployeeInfoWithRestrictions(int condition) {
-		// TODO Auto-generated method stub
-		return getAllEmployeeInfoWithRestrictions(condition+"");
+		return getAllEmployeeInfoWithRestrictions(condition + "");
 	}
 
 //END of getEmployeeInfo(int) method
