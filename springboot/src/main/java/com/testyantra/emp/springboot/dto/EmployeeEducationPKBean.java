@@ -17,33 +17,36 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
 
-
 @SuppressWarnings("serial")
 @Embeddable
 @XmlRootElement(name = "employee-education-pk")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class EmployeeEducationPKBean implements Serializable{
+public class EmployeeEducationPKBean implements Serializable {
 
 	@JoinColumn(name = "id")
 	@ManyToOne
-	//@XmlTransient
+	// @XmlTransient
 	@JsonIgnore
 	private EmployeeInfoBean infoBean;
 	@Column(name = "educational_type")
-	//@XmlElement(name="educational-type")
+	// @XmlElement(name="educational-type")
 	@JsonProperty(value = "education-type")
 	private String educationalType;
+
 	public EmployeeInfoBean getInfoBean() {
 		return infoBean;
 	}
+
 	public void setInfoBean(EmployeeInfoBean infoBean) {
 		this.infoBean = infoBean;
 	}
+
 	public String getEducationalType() {
 		return educationalType;
 	}
+
 	public void setEducationalType(String educationalType) {
 		this.educationalType = educationalType;
 	}
-	
+
 }

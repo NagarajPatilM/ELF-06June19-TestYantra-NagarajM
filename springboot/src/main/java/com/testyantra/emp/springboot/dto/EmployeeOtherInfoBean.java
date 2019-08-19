@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -25,10 +26,16 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @Table(name = "employee_otherinfo")
 public class EmployeeOtherInfoBean implements Serializable {
 
+	//@JsonIgnore
+	@GeneratedValue
 	@Id
-	@OneToOne
-	@JoinColumn(name = "id")
+	@Column(name = "other_info_id")
+	private int otherInfoId;
+
+	// @Id
 	// @XmlTransient
+	@OneToOne
+	@JoinColumn(name = "id", referencedColumnName = "id", unique = true, nullable = false)
 	@JsonIgnore
 	private EmployeeInfoBean infoBean;
 
@@ -197,6 +204,14 @@ public class EmployeeOtherInfoBean implements Serializable {
 
 	public void setAdhar(long adhar) {
 		this.adhar = adhar;
+	}
+
+	public int getOtherInfoId() {
+		return otherInfoId;
+	}
+
+	public void setOtherInfoId(int otherInfoId) {
+		this.otherInfoId = otherInfoId;
 	}
 
 }

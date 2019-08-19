@@ -3,6 +3,7 @@ package com.testyantra.emp.springboot.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.ws.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,7 +59,7 @@ public class EmployeeController {
 	 * response.setDescription("Employee data not added successfully"); } return
 	 * response; }
 	 */
-	
+
 	@PostMapping(path = "/create", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public EmployeeResponse createEmployee(@RequestBody EmployeeInfoBean bean) {
 
@@ -77,10 +78,18 @@ public class EmployeeController {
 				employeeExperienceInfoBean.getExperiencePKBean().setInfoBean(bean);
 			}
 
+			/*
+			 * EmployeeInfoBean manager=bean.getMngrId(); if(manager!=null) {
+			 * bean.setMngrId( repository.findById((manager.getId().get())) ; }
+			 */
+
 			EmployeeOtherInfoBean otherInfo = bean.getOtherInfo();
 			otherInfo.setInfoBean(bean);
-
-			bean.setMngrId(repository.findById(bean.getMngrId().getId()).get());
+			EmployeeInfoBean managerId = bean.getMngrId();
+			if (managerId != null) {
+				bean.setMngrId(repository.findById(bean.getMngrId().getId()).get());
+			}
+			// bean.getOtherInfo().setOtherInfoId(repository.findByEmpId(bean).getOtherInfoId());
 
 			repository.save(bean);
 			response.setStatusCode(201);
@@ -169,5 +178,16 @@ public class EmployeeController {
 
 		return response;
 	}
+
+	@GetMapping(value = "/getotherinfo", produces = MediaType.APPLICATION_JSON_VALUE)
+	public EmployeeOtherInfoBean getOtherInfo(int id) {
+		EmployeeInfoBean bean = new EmployeeInfoBean();
+		bean.setId(id);
+		return repository.findByEmpId(bean);
+	}
+	
+
+	
+
 
 }

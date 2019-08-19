@@ -12,12 +12,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 import lombok.Data;
 
 @Entity
+@JsonRootName(value="address-info-bean")
 @Table(name = "employee_addressinfo")
-@XmlRootElement(name = "employee-address-info")
+//@XmlRootElement(name = "employee-address-info")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class EmployeeAddressInfoBean implements Serializable {
 	
@@ -46,6 +48,7 @@ public class EmployeeAddressInfoBean implements Serializable {
 	
 	@Column(name = "pin")
 	private int pin;
+	
 	public EmployeeAddressPKBean getAddressPKBean() {
 		return addressPKBean;
 	}

@@ -29,8 +29,8 @@ public class EmployeeAddressPKBean implements Serializable {
 	@JoinColumn(name = "id")
 	@ManyToOne
 	private EmployeeInfoBean infoBean;
-	@Column(name = "address_type")
 	
+	@Column(name = "address_type")
 	//@XmlElement(name="address-type")
 	@JsonProperty(value = "address-type")
 	private String addressType;
