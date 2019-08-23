@@ -1,0 +1,20 @@
+@media (min-width:767px){
+    .registration{
+        max-width: 400px;
+    }
+}
+
+legend{
+    color:white;
+}
+h1{
+    color:white;
+}
+
+.form-group {
+    color:white;
+} 
+.a{
+    color:white;
+    font-size: 17px;
+}

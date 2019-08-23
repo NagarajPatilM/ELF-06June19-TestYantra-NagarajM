@@ -1,0 +1,18 @@
+
+
+
+.top{
+    background-image: url("https://cdn.pixabay.com/photo/2016/03/09/15/29/books-1246674_960_720.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 740px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  
+}
+.card {
+    margin-top: 120px; 
+    background: linear-gradient(to left,black,darkslategray);
+     opacity: 0.8;
+     border-radius: 20px;
+}

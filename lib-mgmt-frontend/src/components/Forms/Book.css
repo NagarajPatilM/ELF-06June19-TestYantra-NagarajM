@@ -1,0 +1,16 @@
+
+.top{
+    background-image: url("https://cdn.pixabay.com/photo/2015/11/19/21/11/knowledge-1052011_960_720.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 750px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  
+}
+.card {
+    margin-top: 120px; 
+    background: linear-gradient(to right,black,darkslategray);
+     opacity: 0.8;
+     border-radius: 20px;
+}
