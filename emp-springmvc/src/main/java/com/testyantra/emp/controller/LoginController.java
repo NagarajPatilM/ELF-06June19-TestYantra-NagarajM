@@ -17,8 +17,8 @@ import static com.testyantra.emp.common.EMPConstants.VIEW_HOMEPAGE;
 import static com.testyantra.emp.common.EMPConstants.VIEW_LOGINPAGE;
 import static com.testyantra.emp.common.EMPConstants.DB_INTERACTIONTYPE;
 
+import com.testyantra.emp.bean.EmployeeInfoBean;
 import com.testyantra.emp.dao.EmployeeDAO;
-import com.testyantra.empspringmvc.bean.EmployeeInfoBean;
 
 @Controller
 @RequestMapping("/login")

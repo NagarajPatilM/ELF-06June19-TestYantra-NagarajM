@@ -5,17 +5,25 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/testyantra_db</property>
+      <!--   <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/testyantra_dbexp</property> -->
+   <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/testyantra_db?createDatabaseIfNotExist=true</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
         <property name="hibernate.connection.pool_size">1</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
- <!-- <mapping class="com.testyantra.hibernateapp.dto.EmployeeNewInfo" /> 
- <mapping class="com.testyantra.hibernateapp.dto.EmployeeInfoBean" />  -->
-<!-- <mapping class="com.testyantra.hibernateapp.dto.EmployeeInfoBean" />  -->
+       <!--  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
+        
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+         <mapping class="com.testyantra.hibernateapp.onetoone.EmployeeInfoBean" /> 
+         <mapping class="com.testyantra.hibernateapp.onetoone.EmployeeOtherInfoBean" /> 
+         <mapping class="com.testyantra.hibernate.manytoone.EmployeeAddressInfoBean" /> 
+          <mapping class="com.testyantra.hibernate.manytoone.EmployeeEducationInfoBean" /> 
+           <mapping class="com.testyantra.hibernate.manytoone.EmployeeExperienceInfoBean" /> 
+           <mapping class="com.testyantra.hibernate.manytomany.TrainingInfoBean" /> 
+         
 <!--         <mapping resource="book.hbm.xml" /> -->
     </session-factory>
 </hibernate-configuration>

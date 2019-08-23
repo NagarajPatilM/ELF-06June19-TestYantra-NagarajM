@@ -1,5 +1,8 @@
+<%@page import="org.springframework.web.servlet.support.ServletUriComponentsBuilder"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <% String baseURL = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
+    %>
 <!DOCTYPE html>
 
 <%@page import="java.util.Date"%>
@@ -28,7 +31,8 @@
 			</div>
 
 			<div class='col-md-8'>
-			 <form action="./validator/validate/employee/search" method="GET"> 
+			 <!-- <form action="./validator/validate/employee/search" method="GET">  -->
+			 <form action="<%=baseURL%>"/validate/search" method="GET"> 
 				<!-- <form action="./login" method="POST"> -->
 				<!-- <form action="./validate" >
 				<!-- <form action="../validate3/search" >

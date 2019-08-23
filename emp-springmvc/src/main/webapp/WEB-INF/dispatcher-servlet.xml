@@ -19,7 +19,7 @@
     </bean>
      
     <bean id="sessionfactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-    <property name="packagesToScan" value="com.testyantra.empspringmvc.bean"></property>
+    <property name="packagesToScan" value="com.testyantra.emp.bean"></property>
     <property name="configLocations" value="classpath:hibernate.cfg.xml"></property>
     </bean>
     

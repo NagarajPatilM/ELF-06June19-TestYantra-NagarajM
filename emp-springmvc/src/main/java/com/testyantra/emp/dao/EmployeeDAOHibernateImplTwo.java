@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.testyantra.empspringmvc.bean.EmployeeInfoBean;
+import com.testyantra.emp.bean.EmployeeInfoBean;
 
 
 public class EmployeeDAOHibernateImplTwo implements EmployeeDAO {

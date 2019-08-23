@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <%@page import="javax.print.attribute.standard.MediaSize.Other"%>
-<%@page import="com.testyantra.empspringmvc.bean.EmployeeInfoBean"%>
+<%@page import="com.testyantra.emp.bean.EmployeeInfoBean"%>
 <html>
 
 <head>

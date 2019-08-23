@@ -17,6 +17,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.MediaType;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,7 @@ import com.testyantra.emp.dto.EmployeeResponse;
 import net.bytebuddy.asm.Advice.Return;
 
 @RestController
+@CrossOrigin(origins="http://localhost:3000")
 @RequestMapping("/login")
 @PropertySource(PROPERTY_FILENAME)
 public class LoginController {
@@ -44,6 +46,7 @@ public class LoginController {
 		if (bean != null && bean.getPassword().equals(password)) {
 			response.setStatusCode(201);
 			response.setMessage("successfull");
+			response.setDescription("successfully logged in");
 			response.setBean(Arrays.asList(bean));
 			request.getSession().setAttribute("bean", bean);
 		} else {

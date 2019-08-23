@@ -3,7 +3,7 @@ package com.testyantra.emp.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.testyantra.empspringmvc.bean.EmployeeInfoBean;
+import com.testyantra.emp.bean.EmployeeInfoBean;
 
 
 public interface EmployeeDAO {

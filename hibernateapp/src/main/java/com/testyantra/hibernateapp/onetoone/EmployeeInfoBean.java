@@ -7,19 +7,24 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.ToString;
 @Data
 @Entity
 @Table(name="employee_info")
+@ToString
 public class EmployeeInfoBean implements Serializable{
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@PrimaryKeyJoinColumn
-	private EmployeeOtherInfoBean otherInfo;
+	/*
+	 * @OneToOne(cascade=CascadeType.ALL)
+	 * 
+	 * @PrimaryKeyJoinColumn private EmployeeOtherInfoBean otherInfo;
+	 */
 
 @Id
 @Column(name="id")
@@ -48,5 +53,4 @@ private Date hiredate;
 private int deptId;
 @Column(name="mngr_id")
 private int mngrId;
-
 }
