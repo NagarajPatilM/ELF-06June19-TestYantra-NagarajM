@@ -44,8 +44,11 @@ public class LoginServlet extends HttpServlet {
 
 			String url = "./welcome";
 			request.setAttribute("bean", bean);
-			RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-			dispatcher.forward(request, response);
+			/*
+			 * RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+			 * dispatcher.forward(request, response);
+			 */
+			response.sendRedirect(url);
 
 		} else {
 			PrintWriter out = response.getWriter();

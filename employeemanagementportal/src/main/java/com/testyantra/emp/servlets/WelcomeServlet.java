@@ -16,7 +16,7 @@ import com.testyantra.emp.bean.EmployeeInfoBean;
 @WebServlet("/welcome")
 public class WelcomeServlet extends HttpServlet {
 	
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			                        throws ServletException, IOException {
 		HttpSession session=req.getSession(false);
 		PrintWriter out=resp.getWriter();
@@ -28,8 +28,7 @@ public class WelcomeServlet extends HttpServlet {
 			out.print("<html>");
 			out.print("<body>");
 			out.print("<h1> <span style=\"color:red\">Employee Not Found</span></h1>");
-			out.print("</body>")
-			;
+			out.print("</body>");
 			out.print("</html>");
 		}else {
 			out.print("<!DOCTYPE html>                                                                        ") ;

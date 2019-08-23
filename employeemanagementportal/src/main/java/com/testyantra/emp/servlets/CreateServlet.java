@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.testyantra.emp.bean.EmployeeInfoBean;
+import com.testyantra.emp.bean.EmployeeOtherInfoBean;
 import com.testyantra.emp.dao.EmployeeDAO;
 import com.testyantra.emp.dao.EmployeeDAOFactory;
 
@@ -28,6 +29,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 		
 		bean.setId(Integer.parseInt(req.getParameter("id")));
 		bean.setEmpName(req.getParameter("name"));
+	System.out.println(bean.getAge());
 		bean.setAge(Integer.parseInt(req.getParameter("age")));
 		bean.setAccountNumber(Long.parseLong(req.getParameter("accountno")));
 		bean.setGender(req.getParameter("gender"));
@@ -44,6 +46,13 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 		bean.setDepartmentId(Integer.parseInt(req.getParameter("deptid")));
 		bean.setManagerId(Integer.parseInt(req.getParameter("mngrid")));
 		bean.setPassword(req.getParameter("password"));
+		
+		//getting and setting values for EmployeeOtherInfoBean
+		EmployeeOtherInfoBean otherInfoBean=new EmployeeOtherInfoBean();
+		otherInfoBean.setAadhaar(Long.parseLong(req.getParameter("aadhaar")));
+		otherInfoBean.setBloodGrp(req.getParameter("bloodgp"));
+		otherInfoBean.setEmergencContactNo(Long.parseLong(req.getParameter("emgconname")));
+		
 		
 		EmployeeDAO dao=EmployeeDAOFactory.getInstance();
 		 out=resp.getWriter();
