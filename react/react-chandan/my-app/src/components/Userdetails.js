@@ -1,0 +1,12 @@
+import React from 'react'
+
+class UserDetails extends React.Component{
+    render(){
+        return(
+            <div>
+                <h1>Details page</h1>
+            </div>
+        )
+    }
+}
+export default UserDetails
