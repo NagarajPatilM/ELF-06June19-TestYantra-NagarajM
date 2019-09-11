@@ -1,0 +1,23 @@
+
+#card {
+    margin-top: 50px; 
+    background-color:white
+}
+#alert {
+    width:320px;
+    margin: auto;
+}
+textarea{
+ 
+    height: 80px;
+    width: 400px;
+    margin: auto;
+}
+.prio {
+    width: 400px !important;
+    height: 35px !important;
+    margin: auto;
+}
+#chead {
+    border-radius: 20px 20px 0px 0px; 
+}
